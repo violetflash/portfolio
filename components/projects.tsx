@@ -1,6 +1,6 @@
 // @flow
 import { SectionHeading } from '@/components/section-heading';
-import { projectsData } from '@/lib/data';
+import { ProjectData, projectsData } from '@/lib/data';
 import * as React from 'react';
 
 type Props = {
@@ -22,14 +22,17 @@ export const Projects = (props: Props) => {
 };
 
 
-type ProjectProps = {
-  project: keyof typeof projectsData;
-};
-export const Project = (props: ProjectProps) => {
+export const Project = ({ tags, title, imageUrl, description,  }: ProjectData) => {
 
   return (
-    <div>
-
-    </div>
+    <article>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <ul>
+        {tags.map((tag, i) => (
+          <li key={i}>{tag}</li>
+        ))}
+      </ul>
+    </article>
   );
 };

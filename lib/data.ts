@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
@@ -75,15 +76,26 @@ export const projectsData = [
     tags: ["React", "TypeScript", "Material UI", "Cypress"],
     linkUrl: "https://original-soft.pro/",
     imageUrl: originalSoftImg,
+    wtfIsThisField: 'wow!'
   },
   {
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer Motion"],
     imageUrl: originalSoftImg,
+    wtfIsThisField: 'wow!'
   },
 ] as const;
+
+// export type ProjectData = {
+//   title: string;
+//   description: string;
+//   tags: (typeof skillsData[number])[];
+//   linkUrl: string;
+//   imageUrl: StaticImageData;
+// }
+export type ProjectData = typeof projectsData[number];
 
 export const skillsData = [
   "HTML",
@@ -105,4 +117,9 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
+  "Redux Toolkit",
+  "Material UI",
+  "Docker",
+  "Cypress",
+  "SQL",
 ] as const;
