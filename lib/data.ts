@@ -5,6 +5,7 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import chilledButterImg from "@/public/chilledButter.png";
 import originalSoftImg from "@/public/originalSoft.png";
+import vocabV1Img from "@/public/vocab-v1.png";
 
 export const links = [
   {
@@ -68,6 +69,7 @@ export const projectsData = [
     tags: ["React", "TypeScript", "Redux Toolkit", "Material UI", "Docker", "Cypress"],
     linkUrl: "https://chilledbutter.com/",
     imageUrl: chilledButterImg,
+    type: 'commerce'
   },
   {
     title: "TraceWay",
@@ -76,15 +78,15 @@ export const projectsData = [
     tags: ["React", "TypeScript", "Material UI", "Cypress"],
     linkUrl: "https://original-soft.pro/",
     imageUrl: originalSoftImg,
-    wtfIsThisField: 'wow!'
+    type: 'commerce'
   },
   {
-    title: "Word Analytics",
+    title: "Vocabulary",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer Motion"],
-    imageUrl: originalSoftImg,
-    wtfIsThisField: 'wow!'
+      "JS OOP based project for personal use for learning new words",
+    tags: ["Javascript", "OOP", "Firebase"],
+    imageUrl: vocabV1Img,
+    type: 'personal'
   },
 ] as const;
 
