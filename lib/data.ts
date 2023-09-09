@@ -65,7 +65,7 @@ export const projectsData = [
   {
     title: "ChilledButter",
     description:
-      "Online Scheduling Software for small business. I worked as a React developer on this startup project for almost 1 year. Staff management, Smart Calendar, Online Booking, etc...",
+      "Online Scheduling Software for small business. Staff management, Smart Calendar, Online Booking, etc...",
     tags: ["React", "TypeScript", "Redux Toolkit", "Material UI", "Docker", "Cypress"],
     linkUrl: "https://chilledbutter.com/",
     imageUrl: chilledButterImg,
@@ -83,8 +83,9 @@ export const projectsData = [
   {
     title: "Vocabulary",
     description:
-      "JS OOP based project for personal use for learning new words",
+      "JS OOP based project for personal use for learning/training new words.",
     tags: ["Javascript", "OOP", "Firebase"],
+    linkUrl: "https://vocab-ktotaam.vercel.app/",
     imageUrl: vocabV1Img,
     type: 'personal'
   },
