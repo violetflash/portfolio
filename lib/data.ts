@@ -1,9 +1,11 @@
+import { StaticImageData } from 'next/image';
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import chilledButterImg from "@/public/chilledButter.png";
 import originalSoftImg from "@/public/originalSoft.png";
+import vocabV1Img from "@/public/vocab-v1.png";
 
 export const links = [
   {
@@ -63,10 +65,11 @@ export const projectsData = [
   {
     title: "ChilledButter",
     description:
-      "Online Scheduling Software for small business. I worked as a React developer on this startup project for almost 1 year. Staff management, Smart Calendar, Online Booking, etc...",
+      "Online Scheduling Software for small business. Staff management, Smart Calendar, Online Booking, etc...",
     tags: ["React", "TypeScript", "Redux Toolkit", "Material UI", "Docker", "Cypress"],
     linkUrl: "https://chilledbutter.com/",
     imageUrl: chilledButterImg,
+    type: 'commerce'
   },
   {
     title: "TraceWay",
@@ -75,15 +78,27 @@ export const projectsData = [
     tags: ["React", "TypeScript", "Material UI", "Cypress"],
     linkUrl: "https://original-soft.pro/",
     imageUrl: originalSoftImg,
+    type: 'commerce'
   },
   {
-    title: "Word Analytics",
+    title: "Vocabulary",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: originalSoftImg,
+      "JS OOP based project for personal use for learning/training new words.",
+    tags: ["Javascript", "OOP", "Firebase"],
+    linkUrl: "https://vocab-ktotaam.vercel.app/",
+    imageUrl: vocabV1Img,
+    type: 'personal'
   },
 ] as const;
+
+// export type ProjectData = {
+//   title: string;
+//   description: string;
+//   tags: (typeof skillsData[number])[];
+//   linkUrl: string;
+//   imageUrl: StaticImageData;
+// }
+export type ProjectData = typeof projectsData[number];
 
 export const skillsData = [
   "HTML",
@@ -105,4 +120,9 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
+  "Redux Toolkit",
+  "Material UI",
+  "Docker",
+  "Cypress",
+  "SQL",
 ] as const;

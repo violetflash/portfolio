@@ -52,7 +52,7 @@ export const Intro = (props: Props) => {
           </motion.span>
         </div>
       </div>
-      <motion.p
+      <motion.h1
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
@@ -62,7 +62,7 @@ export const Intro = (props: Props) => {
         <span className="font-bold">4 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
-      </motion.p>
+      </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export const Intro = (props: Props) => {
         </a>
         <a
           className="flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 text-[1.35rem] outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
-          href="https://github.com"
+          href="https://github.com/violetflash/portfolio"
           target="_blank"
         >
           <FaGithubSquare />
