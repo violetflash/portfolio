@@ -1,25 +1,26 @@
+'use client';
 // @flow
-import { Project } from '@/components/project';
-import { SectionHeading } from '@/components/section-heading';
-import { ProjectData, projectsData } from '@/lib/data';
 import * as React from 'react';
-
-const renderProjectByType = (type: ProjectData['type']) => {
-  return projectsData
-    .filter((project) => project.type === type)
-    .map((project, index) => (
-      <Project key={index} {...project} />
-    ))
-};
+import { SectionHeading } from '@/components/section-heading';
+import { useSectionInView } from '@/hooks/use-section-in-view';
+import { renderProjectByType } from '@/utils/render-project-by-type';
 
 type Props = {
 
 };
 export const Projects = (props: Props) => {
 
+  const { ref } = useSectionInView({
+    threshold: 0.4,
+    sectionName: 'Projects'
+  })
+
   return (
-    // <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
-    <section className="">
+    <section
+      ref={ref}
+      id="projects"
+      className="scroll-mt-28"
+    >
       <SectionHeading text="Projects" />
       <h3 className="text-center mb-2">Commerce Apps that i worked on</h3>
       <div>

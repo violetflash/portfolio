@@ -31,7 +31,7 @@ export const Project = ({ tags, title, imageUrl, description, linkUrl }: Project
     >
       <div
         className={cn(
-          'relative flex bg-gray-100 max-w-[45rem] border border-black/5 overflow-hidden transition',
+          'relative flex bg-gray-100 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden transition',
           'sm:pr-8 sm:h-[22rem] ',
           'hover:bg-gray-200',
           'group-even:flex-row-reverse',

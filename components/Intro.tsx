@@ -1,21 +1,30 @@
 // @flow
 "use client"
+import { useSectionInView } from '@/hooks/use-section-in-view';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
-// import photoImg from "@/public/photo.png";
 import { motion } from 'framer-motion';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
-
 type Props = {
 
 };
 export const Intro = (props: Props) => {
+
+  const { ref } = useSectionInView({
+    threshold: 1,
+    sectionName: 'Home'
+  })
+
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section
+      ref={ref}
+      id="home"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+    >
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
