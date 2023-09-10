@@ -19,7 +19,7 @@ export const Projects = (props: Props) => {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-28"
+      className="mb-10 sm:mb-28 scroll-mt-28"
     >
       <SectionHeading text="Projects" />
       <h3 className="text-center mb-2">Commerce Apps that i worked on</h3>
