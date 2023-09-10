@@ -1,6 +1,8 @@
 "use client"
 // @flow
 import { SectionHeading } from '@/components/section-heading';
+import { useSectionInView } from '@/hooks/use-section-in-view';
+import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 
@@ -8,9 +10,19 @@ type Props = {
 
 };
 export const About = (props: Props) => {
+
+  const { ref } = useSectionInView({
+    sectionName: 'About'
+  })
+
   return (
     <motion.section
-      className="max-w-[45rem] text-center leading-8 sm:mb-40"
+      id="about"
+      ref={ref}
+      className={cn(
+        'max-w-[45rem] text-center leading-8 sm:mb-40',
+        'scroll-mt-28' // отвечает за отступ при скролле на якорь
+      )}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}

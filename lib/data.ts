@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
@@ -90,15 +89,6 @@ export const projectsData = [
     type: 'personal'
   },
 ] as const;
-
-// export type ProjectData = {
-//   title: string;
-//   description: string;
-//   tags: (typeof skillsData[number])[];
-//   linkUrl: string;
-//   imageUrl: StaticImageData;
-// }
-export type ProjectData = typeof projectsData[number];
 
 export const skillsData = [
   "HTML",
