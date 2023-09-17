@@ -14,7 +14,7 @@ export const Experience = (props: Props) => {
     <section id="experience">
       <SectionHeading text="My experience" />
         hahah
-      <VerticalTimeline>
+      <VerticalTimeline lineColor=''>
         {experiencesData.map((item, index) => (
             <React.Fragment key={index}>
               <VerticalTimelineElement

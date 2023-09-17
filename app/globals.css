@@ -6,4 +6,7 @@
     body {
         @apply bg-[#ecf03] text-[#1f2937] tracking-wide shadow-[0_0_10px_purple]
     }
+    html {
+        --line-color: #e5e7eb;
+    }
 }
