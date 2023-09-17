@@ -35,29 +35,33 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Freelance",
+    location: "Home",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Front-end developer (Landing pages)",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2020-2021",
+    url: ''
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "BeetSoft | Front-end developer (React)",
+    location: "Remote",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "Front-end developer (React)",
+    icon: React.createElement(LuGraduationCap),
+    date: "2021-2022",
+    url: 'https://beetsoft.com/'
+  },
+  {
+    title: '"Original-Soft" | Front-End Developer',
+    location: "Remote",
+    description:
+      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the" +
+      " full stack (Next JSm, Prisma, MongoDB).",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
-  },
+    date: "2022 - present",
+    url: 'https://original-soft.pro/'
+  }
 ] as const;
 
 export const projectsData = [

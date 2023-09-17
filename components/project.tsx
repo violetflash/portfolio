@@ -1,6 +1,6 @@
 'use client'
 
-import { ProjectData } from '@/lib/data';
+import { ProjectData } from '@/types';
 import { cn } from '@/utils/cn';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
@@ -21,7 +21,7 @@ export const Project = ({ tags, title, imageUrl, description, linkUrl }: Project
       className={cn(
         'group mb-3',
         'sm:mb-8',
-        'last:mb-0 '
+        'last:mb-0'
       )}
       ref={ref}
       style={{
