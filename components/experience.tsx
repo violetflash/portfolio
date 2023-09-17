@@ -11,9 +11,8 @@ type Props = {
 };
 export const Experience = (props: Props) => {
   return (
-    <section id="experience">
+    <section id="experience" className="mb-28 sm:mb-40 scroll-mt-28">
       <SectionHeading text="My experience" />
-        hahah
       <VerticalTimeline lineColor=''>
         {experiencesData.map((item, index) => (
             <React.Fragment key={index}>

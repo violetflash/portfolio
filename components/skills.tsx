@@ -32,7 +32,7 @@ export const Skills = (props: Props) => {
   })
 
   return (
-    <section id="skills" ref={ref} className="scroll-mt-28">
+    <section id="skills" ref={ref} className="mb-10 sm:mb-28 scroll-mt-28">
       <SectionHeading text="My skills" />
       <ul className={cn('flex flex-wrap max-w-[46rem] gap-2')}>
         {skillsData.map((skill, index) => (
