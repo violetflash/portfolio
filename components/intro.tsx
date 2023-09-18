@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
+import { cn } from '@/utils/cn';
 
 type Props = {
 
@@ -94,7 +95,8 @@ export const Intro = (props: Props) => {
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
         <a
-          className="flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+          className={cn("flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 outline-none" +
+            " hover:text-gray-950", 'app-button')}
           href="https://linkedin.com"
           target="_blank"
         >

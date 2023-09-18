@@ -1,5 +1,6 @@
 // @flow
 import { SectionHeading } from '@/components/section-heading';
+import { cn } from '@/utils/cn';
 import * as React from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 
@@ -18,9 +19,18 @@ export const Contact = (props: Props) => {
         action=""
         className="flex flex-col gap-4 mb-10 "
       >
-        <input type="email" className="h-14 rounded-lg border-black"/>
-        <textarea name="" id="" cols={30} rows={10}></textarea>
-        <button type="submit" className="flex gap-2">Submit <FaPaperPlane /></button>
+        <input type="email" className={cn("h-14", 'styled-input')}/>
+        <textarea name="" id="" cols={30} rows={10} className={cn('h-52 my-3 resize-none p-4', 'styled-input')}></textarea>
+        <button
+          type="submit"
+          className={cn('group flex items-center justify-center gap-2 h-[3rem] w-[8rem]', 'app-button')}
+        >
+          Submit
+          <FaPaperPlane
+            className={cn('text-xs opacity-70', 'group-hover:-translate-y-1 group-hover:translate-x-1' +
+            ' transition'
+            )} />
+        </button>
       </form>
     </section>
   );
