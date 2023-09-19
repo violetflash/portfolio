@@ -103,7 +103,11 @@ export const Intro = (props: Props) => {
           <BsLinkedin />
         </a>
         <a
-          className="flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 text-[1.35rem] outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+          className={cn("flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 text-[1.35rem] outline-none" +
+            " hover:text-gray-950" +
+            " border border-black/10",
+            "app-button"
+          )}
           href="https://github.com/violetflash/portfolio"
           target="_blank"
         >
