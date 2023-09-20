@@ -1,5 +1,6 @@
 // @flow
 "use client"
+import { useActiveSectionContext } from '@/hooks/use-active-section-context';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,7 +19,9 @@ export const Intro = (props: Props) => {
   const { ref } = useSectionInView({
     threshold: 1,
     sectionName: 'Home'
-  })
+  });
+
+  const {setActiveSection, setLastClickTime} = useActiveSectionContext();
 
   return (
     <section
@@ -84,13 +87,20 @@ export const Intro = (props: Props) => {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setActiveSection('Contact');
+            setLastClickTime(Date.now())
+          }}
         >
           Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"/>
         </Link>
         <a
           href="/CV.pdf"
           download
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          className={cn(
+            "group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none transition cursor-pointer border-black-custom",
+            "focus:scale-110 hover:scale-110 active:scale-105"
+          )}
         >
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>

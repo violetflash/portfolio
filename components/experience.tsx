@@ -1,5 +1,6 @@
 // @flow
 'use client'
+import { useSectionInView } from '@/hooks/use-section-in-view';
 import { experiencesData } from '@/lib/data';
 import * as React from 'react';
 import { SectionHeading } from '@/components/section-heading';
@@ -10,8 +11,12 @@ type Props = {
 
 };
 export const Experience = (props: Props) => {
+
+  const { ref } = useSectionInView({
+    sectionName: 'Experience'
+  })
   return (
-    <section id="experience" className="mb-28 sm:mb-40 scroll-mt-28">
+    <section ref={ref} id="experience" className="mb-28 sm:mb-40 scroll-mt-28">
       <SectionHeading text="My experience" />
       <VerticalTimeline lineColor=''>
         {experiencesData.map((item, index) => (
