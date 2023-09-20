@@ -1,6 +1,7 @@
 'use server';
 
 import { checkIsValidString } from '@/utils/check-is-valid-string';
+import { getErrorMessage } from '@/utils/get-error-message';
 import { Resend } from 'resend';
 
 // Resend instance
@@ -25,15 +26,14 @@ export const sendEmail = async (formData: FormData) => {
     await resend.emails.send({
       from: 'Contact form <onboarding@resend.dev>',
       to: 'ktootaam@gmail.com',
-      subject: `Message from (${email})`,
+      subject: `Message from Contact form. Sender: ${email}`,
       reply_to: email,
       text: message
     })
-  } catch (e: unknown) {
-    console.log('e: >>', e);
-    // return {
-    //   error: e.message
-    // }
+  } catch (error: unknown) {
+    console.log('error: >>', error);
+    return {
+      error: getErrorMessage(error)
+    }
   }
-
 }
