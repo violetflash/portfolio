@@ -1,7 +1,9 @@
 'use server';
 
+import { ContactFormEmail } from '@/email/contact-form-email';
 import { checkIsValidString } from '@/utils/check-is-valid-string';
 import { getErrorMessage } from '@/utils/get-error-message';
+import React from 'react';
 import { Resend } from 'resend';
 
 // Resend instance
@@ -22,13 +24,18 @@ export const sendEmail = async (formData: FormData) => {
     error: 'Invalid message'
   }
 
+  let data;
   try {
-    await resend.emails.send({
+    data = await resend.emails.send({
       from: 'Contact form <onboarding@resend.dev>',
       to: 'ktootaam@gmail.com',
       subject: `Message from Contact form. Sender: ${email}`,
       reply_to: email,
-      text: message
+      // text: message,
+      react: React.createElement(ContactFormEmail, {
+        message,
+        senderEmail: email
+      }),
     })
   } catch (error: unknown) {
     console.log('error: >>', error);
@@ -36,4 +43,8 @@ export const sendEmail = async (formData: FormData) => {
       error: getErrorMessage(error)
     }
   }
+
+  return {
+    data
+  };
 }

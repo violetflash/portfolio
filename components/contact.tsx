@@ -2,10 +2,13 @@
 import { sendEmail } from '@/actions/send-email';
 // @flow
 import { SectionHeading } from '@/components/section-heading';
+import { SubmitFormBtn } from '@/components/submit-form-btn';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
 import * as React from 'react';
+import { experimental_useFormStatus } from 'react-dom';
+import toast from 'react-hot-toast';
 import { FaPaperPlane } from 'react-icons/fa';
 
 type Props = {
@@ -36,11 +39,12 @@ export const Contact = (props: Props) => {
       <form
         action={async (formData) => {
           console.log('Running on client');
-          try {
-            await sendEmail(formData);
-          } catch (e) {
-
+          const { error, data } = await sendEmail(formData);
+          if (error) {
+            toast.error(error);
+            return;
           }
+          toast.success('Message sent!');
         }}
         className="flex flex-col gap-4 mt-4"
       >
@@ -62,16 +66,7 @@ export const Contact = (props: Props) => {
           maxLength={5000}
           required
         />
-        <button
-          type="submit"
-          className={cn('group flex items-center justify-center gap-2 h-[3rem] w-[8rem]', 'app-button bg-gray-900 text-white')}
-        >
-          Submit
-          <FaPaperPlane
-            className={cn('text-xs opacity-70', 'group-hover:-translate-y-1 group-hover:translate-x-1' +
-            ' transition'
-            )} />
-        </button>
+        <SubmitFormBtn />
       </form>
     </motion.section>
   );
