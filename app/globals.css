@@ -10,3 +10,18 @@
         --line-color: #e5e7eb;
     }
 }
+
+@layer components {
+    .border-black-custom {
+        @apply border border-black/10;
+    }
+
+    .styled-input {
+        @apply border-black-custom p-4 rounded-lg;
+    }
+
+    .app-button {
+        @apply rounded-full outline-none transition-all focus:scale-[1.15] hover:scale-[1.15] active:scale-105 cursor-pointer border-black-custom
+    }
+}
+

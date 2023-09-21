@@ -32,13 +32,13 @@ export const Skills = (props: Props) => {
   })
 
   return (
-    <section id="skills" ref={ref} className="scroll-mt-28">
+    <section id="skills" ref={ref} className="mb-10 sm:mb-28 scroll-mt-28">
       <SectionHeading text="My skills" />
       <ul className={cn('flex flex-wrap max-w-[46rem] gap-2')}>
         {skillsData.map((skill, index) => (
           <motion.li
             key={skill}
-            className={cn('bg-white border border-black/10 px-2 py-2 rounded-lg')}
+            className={cn('bg-white border-black-custom px-2 py-2 rounded-lg')}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"

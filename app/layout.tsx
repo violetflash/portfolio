@@ -3,6 +3,7 @@ import { Header } from '@/components/header';
 import { ActiveSectionContextProvider } from '@/context/active-section-context';
 import { cn } from '@/utils/cn';
 import { Inter } from 'next/font/google'
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({subsets: ['latin']})
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (<html lang="en" className="!scroll-smooth">
-  <body className={`${inter.className} h-[5000px] relative bg-gray-50 text-gray-950 pt-28 sm:pt-36`}>
+  <body className={`${inter.className} relative bg-gray-50 text-gray-950 pt-28 sm:pt-36`}>
     <div
       className="bg-[#fbe2e3] absolute -z-10 top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
     <div
@@ -28,6 +29,7 @@ export default function RootLayout({
     <ActiveSectionContextProvider>
       <Header/>
       {children}
+        <Toaster position="top-right" toastOptions={{ duration: 3000 }}/>
     </ActiveSectionContextProvider>
   </body>
   </html>)
