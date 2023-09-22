@@ -1,4 +1,5 @@
 import './globals.css'
+import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { ActiveSectionContextProvider } from '@/context/active-section-context';
 import { cn } from '@/utils/cn';
@@ -29,7 +30,8 @@ export default function RootLayout({
     <ActiveSectionContextProvider>
       <Header/>
       {children}
-        <Toaster position="top-right" toastOptions={{ duration: 3000 }}/>
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }}/>
+      <Footer />
     </ActiveSectionContextProvider>
   </body>
   </html>)
