@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --color-text-base: #030712; /* text-gray-950 */
+        --color-text-inverted: #f9fafb; /* text-gray-50 */
+        --color-text-muted: #374151; /* text-gray-700 /*
+        --color-text-muted-inverted: #9b8b74;
+        --color-bg-base: #f9fafb; /* bg-gray-50 */
+        --color-bg-inverted: #060504; /* bg-gray-900 */
+        --color-button-base: #ffffff;
+        --color-button-inverted: #111827;
+    }
+
+    /*.light {*/
+    /*    --color-text-base: #374151;*/
+    /*    --color-text-inverted: #c8beae;*/
+    /*    --color-text-muted: #64748b;*/
+    /*    --color-text-muted-inverted: #9b8b74;*/
+    /*    --color-bg-base: #f9fafb;*/
+    /*    --color-bg-inverted: #030712;*/
+    /*    --color-button-base: #eee7d8;*/
+    /*    --color-button-inverted: #111827;*/
+    /*}*/
+
+    .dark {
+        --color-text-base: #f9fafb; /* text-gray-50 */
+        --color-text-inverted: #030712; /* text-gray-950 */
+        --color-text-muted: #9b8b74;
+        --color-text-muted-inverted: #374151; /* text-gray-700 */
+        --color-bg-base: #060504;
+        --color-bg-inverted: #f9fafb;
+        --color-button-base: #111827;
+        --color-button-inverted: #eee7d8;
+    }
+
+    body {
+        @apply text-skin-base bg-skin-base tracking-wide dark:text-opacity-90
+    }
+    html {
+        --line-color: #e5e7eb;
+    }
+
+    /*button {*/
+    /*    @apply bg-skin-button-base text-skin-base*/
+    /*}*/
+}
+
+@layer components {
+    .border-black-custom {
+        @apply border border-black/10;
+    }
+    .styled-input {
+        @apply border-black-custom p-4 rounded-lg;
+    }
+
+    .app-button {
+        @apply rounded-full outline-none transition-all focus:scale-[1.10] hover:scale-[1.10] active:scale-105 cursor-pointer border-black-custom
+    }
+
+    .app-button-primary {
+        @apply app-button text-skin-inverted dark:bg-slate-800 dark:text-skin-base
+    }
+
+    .app-button-secondary {
+        @apply app-button text-skin-base bg-white dark:bg-white/10 dark:text-white/60
+    }
+}
