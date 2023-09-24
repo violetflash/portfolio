@@ -38,7 +38,8 @@ export const Skills = (props: Props) => {
         {skillsData.map((skill, index) => (
           <motion.li
             key={skill}
-            className={cn('bg-white border-black-custom px-2 py-2 rounded-lg')}
+            className={cn('border-black-custom px-2 py-2 rounded-lg bg-skin-base dark:bg-gray-800' +
+              ' text-skin-base dark:text-skin-base')}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"

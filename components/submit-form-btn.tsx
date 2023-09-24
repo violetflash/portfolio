@@ -17,7 +17,8 @@ export const SubmitFormBtn = (props: Props) => {
       className={cn(
         'group flex items-center justify-center gap-2 h-[3rem] w-[8rem]',
         'app-button bg-gray-900 text-white',
-        'disabled:scale-100 disabled:bg-opacity-65'
+        'disabled:scale-100 disabled:bg-opacity-65',
+        'app-button-primary'
       )}
       disabled={pending}
     >

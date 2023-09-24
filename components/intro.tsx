@@ -86,7 +86,7 @@ export const Intro = (props: Props) => {
       >
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          className="group bg-gray-900 px-7 py-3 flex items-center gap-2 app-button-primary"
           onClick={() => {
             setActiveSection('Contact');
             setLastClickTime(Date.now())
@@ -98,15 +98,14 @@ export const Intro = (props: Props) => {
           href="/CV.pdf"
           download
           className={cn(
-            "group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none transition cursor-pointer border-black-custom",
-            "focus:scale-110 hover:scale-110 active:scale-105"
+            "group px-7 py-3 flex items-center gap-2 app-button-secondary"
           )}
         >
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
         <a
           className={cn("flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 outline-none" +
-            " hover:text-gray-950", 'app-button')}
+            " hover:text-gray-950", 'app-button-secondary')}
           href="https://linkedin.com"
           target="_blank"
         >
@@ -116,7 +115,7 @@ export const Intro = (props: Props) => {
           className={cn("flex gap-2 items-center rounded-full bg-white p-4 text-gray-700 text-[1.35rem] outline-none" +
             " hover:text-gray-950" +
             " border border-black/10",
-            "app-button"
+            "app-button-secondary"
           )}
           href="https://github.com/violetflash/portfolio"
           target="_blank"

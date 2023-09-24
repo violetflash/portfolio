@@ -16,7 +16,7 @@ export const Experience = (props: Props) => {
     sectionName: 'Experience'
   })
   return (
-    <section ref={ref} id="experience" className="mb-28 sm:mb-40 scroll-mt-28">
+    <section ref={ref} id="experience" className="mb-28 sm:mb-40 scroll-mt-28 text-skin-base dark:text-skin-inverted">
       <SectionHeading text="My experience" />
       <VerticalTimeline lineColor=''>
         {experiencesData.map((item, index) => (
@@ -32,7 +32,8 @@ export const Experience = (props: Props) => {
                   padding: '1.3rem 2rem'
                 }}
                 iconStyle={{
-                  background: '#f3f4f6',
+                  color: 'var(--color-text-base)',
+                  background: 'var(--color-text-inverted)',
                   // background: 'white',
                   fontSize: '1.3rem'
                 }}
@@ -40,11 +41,12 @@ export const Experience = (props: Props) => {
                   borderRight: '0.4rem solid #9ca3af',
                 }}
                 date={item.date}
+                dateClassName="text-skin-base"
               >
                 <h3 className="font-semibold capitalize">{item.title}</h3>
                 <p className='font-normal !mt-0'>{item.location}</p>
-                <p className='!mt-1 !mb-3 !font-normal text-gray-700'>{item.description}</p>
-                {item.url && <a className='!mt-4 !font-normal text-gray-700' href={item.url} target="_blank">{item.url}</a>}
+                <p className='!mt-1 !mb-3 !font-normal'>{item.description}</p>
+                {item.url && <a className='!mt-4 !font-normal' href={item.url} target="_blank">{item.url}</a>}
               </VerticalTimelineElement>
             </React.Fragment>
         ))}

@@ -1,5 +1,5 @@
 'use client'
-import { SectionName } from '@/lib/data';
+import { SectionName } from '@/types';
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react';
 
 type ActiveSectionContextType = {

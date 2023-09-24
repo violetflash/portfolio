@@ -35,7 +35,7 @@ export const Contact = (props: Props) => {
       }}
     >
       <SectionHeading text="Contact Me" />
-      <p className="text-gray-700">Please contact me directly at <a className="" href="mailto:ktotaam@mail.ru">ktotaam@mail.ru</a></p>
+      <p className="">Please contact me directly at <a className="" href="mailto:ktotaam@mail.ru">ktotaam@mail.ru</a></p>
       <form
         action={async (formData) => {
           console.log('Running on client');
